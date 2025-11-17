@@ -1,26 +1,30 @@
-import { useState } from 'react'
+import Hero from './components/Hero'
+import Services from './components/Services'
+import Booking from './components/Booking'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50">
+      <header className="sticky top-0 z-10 backdrop-blur bg-white/60 border-b border-rose-100">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <a href="#" className="font-extrabold text-gray-900">Jambi Skin Centre</a>
+          <nav className="hidden sm:flex gap-6 text-gray-700">
+            <a href="#services" className="hover:text-rose-600">Layanan</a>
+            <a href="#booking" className="hover:text-rose-600">Buat Janji</a>
+            <a href="/test" className="hover:text-rose-600">Tes Koneksi</a>
+          </nav>
+          <a href="#booking" className="inline-flex items-center px-4 py-2 rounded-lg bg-rose-600 text-white font-semibold hover:bg-rose-700">Reservasi</a>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <Services />
+        <Booking />
+      </main>
+
+      <Footer />
     </div>
   )
 }
